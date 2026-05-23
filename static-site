@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: backend
+    env: docker
+    plan: free
+    dockerfilePath: backend/Dockerfile
+    envVars:
+      - key: ENV
+        value: production
+    # For sensitive values, create Render secrets and reference them in the dashboard.
+
+  - type: static-site
+    name: frontend
+    env: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    publishPath: dist
