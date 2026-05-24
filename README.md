@@ -57,7 +57,7 @@ See `backend/.env.example` for all recommended variables. Common variables:
 - `SECRET_KEY`, `JWT_SECRET`
 - `MONGO_URI`, `MONGO_DB_NAME`
 - `CORS_ORIGINS` (frontend origin during development/production)
-- `VITE_API_BASE_URL` (frontend build-time API base URL)
+- `VITE_API_BASE_URL` (frontend build-time API base URL; defaults to the Render backend in production)
 
 ## Running tests
 
@@ -82,7 +82,7 @@ Recommended backend start command for WSGI hosts:
 gunicorn wsgi:app
 ```
 
-When deploying separately, set `VITE_API_BASE_URL` to point to the backend API (for example, `https://api.example.com/api`). Ensure `CORS_ORIGINS` permits the frontend origin.
+When deploying separately, set `VITE_API_BASE_URL` to point to the backend API. If you are using the Render backend in this repo, the frontend defaults to `https://ai-driven-internship-backend.onrender.com/api` in production. Ensure `CORS_ORIGINS` permits the frontend origin.
 
 ## Architecture notes
 

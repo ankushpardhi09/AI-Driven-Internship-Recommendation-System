@@ -30,4 +30,5 @@ python backend/run.py
 
 5) Notes:
    - The backend Dockerfile uses `$PORT` at runtime so Render can assign ports.
+   - The frontend defaults to `https://ai-driven-internship-backend.onrender.com/api` in production unless you override `VITE_API_BASE_URL`.
    - For production environment variables (DB connection strings, JWT secrets), add them in the Render dashboard as environment variables or use Render's encrypted secrets.
