@@ -2,11 +2,11 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # Install build deps and python requirements
-COPY backend/requirements.txt ./requirements.txt
+COPY requirements.txt ./requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy backend source
-COPY backend/ ./backend/
+COPY . ./backend/
 
 ENV PYTHONUNBUFFERED=1
 EXPOSE 8000

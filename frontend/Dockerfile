@@ -1,9 +1,9 @@
-FROM node:18-alpine AS build
+FROM node:20-alpine AS build
 WORKDIR /app
 
 # Copy package files and install
 COPY package.json package-lock.json* ./
-RUN npm ci --silent
+RUN npm install --no-audit --no-fund
 
 # Copy rest of repo and build
 COPY . ./
