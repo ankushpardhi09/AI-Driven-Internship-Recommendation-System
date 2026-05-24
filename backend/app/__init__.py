@@ -32,6 +32,14 @@ def create_app(config_name=None):
     app.register_blueprint(copilot_bp, url_prefix='/api')
     
     # Health check endpoint
+    @app.route('/', methods=['GET'])
+    def index():
+        return {
+            'service': 'AI-Driven Internship Recommendation API',
+            'status': 'running',
+            'health': '/api/health',
+        }, 200
+
     @app.route('/api/health', methods=['GET'])
     def health_check():
         return {'status': 'healthy'}, 200
