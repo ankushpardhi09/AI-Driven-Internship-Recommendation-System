@@ -13,5 +13,5 @@ services:
     name: frontend
     env: node
     plan: free
-    buildCommand: npm ci && npm run build
-    publishPath: dist
+    buildCommand: cd frontend && npm ci && npm run build
+    publishPath: frontend/dist

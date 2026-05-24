@@ -1,7 +1,7 @@
 Deploying to Render
 
 1) Create two services in Render:
-   - Frontend: Static Site (Connect to repository). Build command: `npm ci && npm run build`. Publish directory: `dist`.
+   - Frontend: Static Site (Connect to repository). Build command: `cd frontend && npm ci && npm run build`. Publish directory: `frontend/dist`.
    - Backend: Web Service (Docker). Use the `backend/Dockerfile` in the repo (or connect with `render.yaml`).
 
 2) Set Render secrets (in repo Settings -> Secrets or Render dashboard):
@@ -15,6 +15,7 @@ Deploying to Render
 
 ```bash
 # Frontend
+cd frontend
 npm ci
 npm run build
 # Preview static build

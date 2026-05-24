@@ -5,11 +5,11 @@ InternMatch AI helps students discover better-fit internship opportunities, help
 **Highlights**
 - Matches candidates to internships using configurable recommendation logic.
 - Includes authentication, employer and student flows, and a Copilot-powered assistant for content assistance.
-- Designed for local development with a single `npm` command to start both backend and frontend.
+- Designed for local development with the frontend package under `frontend/` and the Flask backend under `backend/`.
 
 **Repository layout**
 - `backend/`: Flask API, services, and models.
-- `public/`, `src/`: Vite + React frontend source, components, and assets.
+- `frontend/public/`, `frontend/src/`: Vite + React frontend source, components, and assets.
 - `tests/`: backend API tests.
 
 ## Quickstart (development)
@@ -22,12 +22,14 @@ Prerequisites:
 Install frontend dependencies:
 
 ```bash
+cd frontend
 npm install
 ```
 
 Start frontend and backend together (recommended):
 
 ```bash
+cd frontend
 npm run dev:full
 ```
 
@@ -36,12 +38,14 @@ Notes: `dev:full` starts the Flask backend first, waits for `http://127.0.0.1:50
 Run frontend only:
 
 ```bash
+cd frontend
 npm run dev:frontend
 ```
 
 Run backend only (ensure Python venv is active):
 
 ```bash
+cd frontend
 npm run dev:backend
 ```
 
@@ -68,6 +72,7 @@ pytest backend/tests
 Build the frontend for production:
 
 ```bash
+cd frontend
 npm run build
 ```
 
@@ -82,7 +87,7 @@ When deploying separately, set `VITE_API_BASE_URL` to point to the backend API (
 ## Architecture notes
 
 - Backend: Flask app with modular `routes/`, `services/`, and `utils/` to keep business logic isolated.
-- Frontend: Vite + React with context for auth and reusable components in `src/components/`.
+- Frontend: Vite + React with context for auth and reusable components in `frontend/src/components/`.
 - Recommendation engine: implemented in `backend/app/services/recommendation_engine.py` and intended to be extendable.
 
 ## Contributing
