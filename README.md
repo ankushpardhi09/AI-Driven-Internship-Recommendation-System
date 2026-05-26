@@ -82,7 +82,7 @@ Recommended backend start command for WSGI hosts:
 gunicorn wsgi:app
 ```
 
-When deploying separately, set `VITE_API_BASE_URL` to point to the backend API. If you are using the Render backend in this repo, the frontend defaults to `https://ai-driven-internship-backend.onrender.com/api` in production. Ensure `CORS_ORIGINS` permits the frontend origin.
+When deploying separately, set `VITE_API_BASE_URL` to point to the backend API. If you are using the Render backend in this repo, the frontend defaults to `https://backend.onrender.com/api` in production. Ensure `CORS_ORIGINS` permits the frontend origin.
 
 ## Architecture notes
 
